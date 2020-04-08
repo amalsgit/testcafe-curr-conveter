@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "testcafe": "^1.8.3"
+  },
+  "devDependencies": {
+    "multiple-cucumber-html-reporter": "^1.16.1",
+    "testcafe-reporter-cucumber-json": "^5.0.0",
+    "testcafe-reporter-html": "^1.4.6"
+  },
+  "scripts": {
+    "report": "node report-generator.js"
   }
 }

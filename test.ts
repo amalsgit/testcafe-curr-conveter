@@ -43,8 +43,8 @@ test("Should be able to convert currency", async (t) => {
 
   await t
     .expect(conversionMsg.innerText)
-    .eql("100 Euro is about 12085.58 Japanese Yen");
-  await t.takeScreenshot;
+    .eql("100 Euro is about 12085.58 Japanese Yen")
+    .takeScreenshot();
 });
 
 test.requestHooks(conversionMock)(
@@ -62,7 +62,7 @@ test.requestHooks(conversionMock)(
 
     await t
       .expect(conversionMsg.innerText)
-      .eql("100 Euro is about 11910.35 Japanese Yen");
-    await t.takeScreenshot;
+      .eql("100 Euro is about 11910.351 Japanese Yen")
+      .takeScreenshot();
   }
 );
