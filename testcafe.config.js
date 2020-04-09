@@ -7,7 +7,7 @@ createTestCafe()
     const runner = testcafe.createRunner();
 
     return runner
-      .src(["tests/logger.tests.ts"])
+      .src(["tests/*.tests.ts"])
       .browsers(["chrome"])
       .reporter([
         "spec",
@@ -26,6 +26,18 @@ createTestCafe()
         pathPattern:
           "${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png",
       })
+      .video(
+        "reports/videos/",
+        {
+          singleFile: true,
+          failedOnly: true,
+          pathPattern: "${DATE}_${TIME}/${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.mp4",
+        },
+        {
+          r: 20,
+          aspect: "4:3",
+        }
+      )
       .run();
   })
   .then((failedCount) => {
