@@ -8,6 +8,7 @@
     "testcafe-reporter-html": "^1.4.6"
   },
   "scripts": {
-    "report": "node report-generator.js"
+    "reports": "node report-generator.js",
+    "tests": "node testcafe.config.js --reporter-app-name='ConverterApp' --reporter-app-version='1.0.0'"
   }
 }

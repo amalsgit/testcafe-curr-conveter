@@ -1,6 +1,6 @@
-import home_page from "./page_models/home_page";
-import "./mocks/api_mocks";
-import { coversionMock } from "./mocks/api_mocks";
+import home_page from "../page_models/home_page";
+import "../mocks/api_mocks";
+import { coversionMock } from "../mocks/api_mocks";
 
 fixture("Should be able to perform currency conversion").page(
   "https://cash-conversion.dev-tester.com/"

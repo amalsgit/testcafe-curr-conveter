@@ -1,4 +1,4 @@
-import home_page from "./page_models/home_page";
+import home_page from "../page_models/home_page";
 
 fixture("Should be able to perform currency conversion").page(
   "https://cash-conversion.dev-tester.com/"
