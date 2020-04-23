@@ -7,7 +7,7 @@ createTestCafe()
     const runner = testcafe.createRunner();
 
     return runner
-      .src(["tests/*.tests.ts"])
+      .src(["tests/mocked_curr_converter_tests.ts"])
       .browsers(["chrome"])
       .reporter([
         "spec",

@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-class homePage {
+class HomePage {
   conversionValue = Selector("#base_amount");
   fromCurrency = Selector("#from_currency");
   fromCurrencyOptions = this.fromCurrency.find("option");
@@ -10,4 +10,4 @@ class homePage {
   convertBtn = Selector("#convert_btn");
 }
 
-export default new homePage();
+export default new HomePage();

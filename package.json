@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
-    "testcafe": "^1.8.3"
+    "axios": "^0.19.2",
+    "testcafe": "^1.8.4"
   },
   "devDependencies": {
     "multiple-cucumber-html-reporter": "^1.16.1",
