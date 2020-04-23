@@ -7,7 +7,15 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install TestCafe from 'npm' and Run Tests
-        uses: DevExpress/testcafe-action@latest
+      - uses: DevExpress/testcafe-action@latest
+      - name: Install dependencies
+        run: yarn
+      - name: Run tests
+        run: yarn tests
+      - name: Generate Reports
+        run: yarn reports
+      - name: Archive test artifacts
+        uses: actions/upload-artifact@v1
         with:
-          args: "ie tests/mocked_curr_converter_tests.ts"
+          name: reports
+          path: reports

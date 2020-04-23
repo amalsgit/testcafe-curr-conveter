@@ -8,7 +8,7 @@ createTestCafe()
 
     return runner
       .src(["tests/mocked_curr_converter_tests.ts"])
-      .browsers(["chrome"])
+      .browsers(["ie","edge"])
       .reporter([
         "spec",
         {
