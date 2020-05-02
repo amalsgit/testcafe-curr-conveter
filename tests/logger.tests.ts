@@ -1,34 +1,27 @@
-import home_page from "../page_models/home_page";
-import "../mocks/api_mocks";
-import { coversionMock } from "../mocks/api_mocks";
-import { RequestLogger } from "testcafe";
+/* eslint-disable no-console */
+import { RequestLogger } from 'testcafe';
+import * as homePage from '../page_models/home_page';
+import * as config from '../utils/loadConfigs';
 
-fixture("Log all network calls").page(
-  "https://cash-conversion.dev-tester.com/"
-);
+fixture('Log all network calls').page(config.envConfigs.baseUrl);
 
 const logger = RequestLogger(/cash-conversion.dev-tester.com/, {
   logRequestHeaders: true,
   logRequestBody: true,
   logResponseBody: true,
   logResponseHeaders: true,
-  
 });
 
 test.requestHooks(logger)(
-  "Log all network calls during currency conversion",
-  async (t) => {
-    await t
-      .typeText(home_page.conversionValue, "100")
-      .click(home_page.fromCurrency)
-      .click(home_page.fromCurrencyOptions.withText("Euro"))
-      .click(home_page.toCurrency)
-      .click(home_page.toCurrencyOptions.withText("Japanese Yen"))
-      .click(home_page.convertBtn);
-
-    await t
-      .expect(home_page.conversionMsg.innerText)
-      .eql("100 Euro is about 12085.581 Japanese Yen");
-      console.log(logger.requests.map(r => r.request.url));
-  }
+  'Log all network calls during currency conversion',
+  async () => {
+    // Given
+    await homePage.setFromCurrency('100', 'Euro');
+    await homePage.setToCurrency('Japanese Yen');
+    // When
+    await homePage.convertCurrency();
+    // Then
+    await homePage.verifyConversion('100 Euro is about 11910.35 Japanese Yen');
+    console.log(logger.requests.map(r => r.request.url));
+  },
 );

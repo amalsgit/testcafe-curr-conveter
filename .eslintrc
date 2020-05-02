@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "testcafe"],
+  "extends": ["airbnb-typescript", "prettier", "plugin:testcafe/recommended"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".ts", ".tsx", ".js"]
+      }
+    }
+  },
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
+    "arrow-parens": ["error", "as-needed"],
+    "import/prefer-default-export": 0,
+    "@typescript-eslint/indent": 0,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  }
+}

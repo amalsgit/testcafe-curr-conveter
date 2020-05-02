@@ -1,46 +1,51 @@
-const createTestCafe = require("testcafe");
+/* eslint-disable no-console */
+/* eslint-disable no-template-curly-in-string */
+const createTestCafe = require('testcafe');
+
 let testcafe = null;
 
 createTestCafe()
-  .then((tc) => {
+  .then(tc => {
     testcafe = tc;
     const runner = testcafe.createRunner();
 
     return runner
-      .src(["tests/mocked_curr_converter_tests.ts"])
-      .browsers(["ie","edge","chrome","firefox"])
+      .src(['tests/mocked_curr_converter_tests.ts'])
+      .browsers(['ie', 'edge', 'chrome', 'firefox'])
       .reporter([
-        "spec",
+        'spec',
         {
-          name: "html",
-          output: "reports/html_report.html",
+          name: 'html',
+          output: 'reports/html_report.html',
         },
         {
-          name: "cucumber-json",
-          output: "reports/report.json",
+          name: 'cucumber-json',
+          output: 'reports/report.json',
         },
       ])
       .screenshots({
-        path: "reports/screenshots/",
+        path: 'reports/screenshots/',
         takeOnFails: true,
         pathPattern:
-          "${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png",
+          '${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png',
       })
       .video(
-        "reports/videos/",
+        'reports/videos/',
         {
           singleFile: true,
           failedOnly: true,
-          pathPattern: "${DATE}_${TIME}/${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.mp4",
+          pathPattern:
+            '${DATE}_${TIME}/${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.mp4',
         },
         {
           r: 20,
-          aspect: "4:3",
-        }
+          aspect: '4:3',
+        },
       )
+      .tsConfigPath('./tsconfig.json')
       .run();
   })
-  .then((failedCount) => {
-    console.log("Tests failed: " + failedCount);
+  .then(failedCount => {
+    console.log(`Tests failed: ${  failedCount}`);
     testcafe.close();
   });

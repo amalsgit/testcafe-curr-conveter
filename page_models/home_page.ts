@@ -1,13 +1,29 @@
-import { Selector } from "testcafe";
+import { Selector, t } from 'testcafe';
 
-class HomePage {
-  conversionValue = Selector("#base_amount");
-  fromCurrency = Selector("#from_currency");
-  fromCurrencyOptions = this.fromCurrency.find("option");
-  toCurrency = Selector("#to_currency");
-  toCurrencyOptions = this.toCurrency.find("option");
-  conversionMsg = Selector(".conversion-response");
-  convertBtn = Selector("#convert_btn");
-}
+const coversionHome = Selector('#__next').withText('Cash Conversion');
+const conversionValue = Selector('#base_amount');
+const fromCurrency = Selector('#from_currency');
+const fromCurrencyOptions = fromCurrency.find('option');
+const toCurrency = Selector('#to_currency');
+const toCurrencyOptions = toCurrency.find('option');
+const conversionMsg = Selector('.conversion-response');
+const convertBtn = Selector('#convert_btn');
 
-export default new HomePage();
+export const assertHomePage = () => t.expect(coversionHome.exists).ok();
+
+export const setFromCurrency = (amount: string, currency: string) =>
+  t
+    .typeText(conversionValue, amount, { replace: true, speed: 0.5 })
+    .click(fromCurrency)
+    .click(fromCurrencyOptions.withText(currency), { speed: 0.5 });
+
+export const setToCurrency = (currency: string) =>
+  t
+    .click(toCurrency)
+    .click(toCurrencyOptions.withText(currency), { speed: 0.5 });
+
+export const convertCurrency = () =>
+  t.expect(convertBtn.visible).ok().click(convertBtn, { speed: 0.5 });
+
+export const verifyConversion = (confirmationMsg: string) =>
+  t.expect(conversionMsg.innerText).eql(confirmationMsg);
