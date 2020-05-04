@@ -10,7 +10,7 @@ createTestCafe()
     const runner = testcafe.createRunner();
 
     return runner
-      .src(['tests/mocked_curr_converter_tests.ts'])
+      .src(['tests/mockedCurrConversion.tests.ts'])
       .browsers(['ie', 'edge', 'chrome', 'firefox'])
       .reporter([
         'spec',
