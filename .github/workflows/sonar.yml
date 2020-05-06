@@ -1,4 +1,4 @@
-name: Basic TestCafe Workflow
+name: SonarCloud Scan
 on: 
   push:
   pull_request:
