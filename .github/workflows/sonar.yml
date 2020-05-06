@@ -1,8 +1,8 @@
 name: SonarCloud Scan
-on: 
+on:
   push:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, reopened]
 
 jobs:
   sonarcloud:
