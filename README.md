@@ -7,21 +7,13 @@ Run the TestCafe end-to-end ui tests by:
 $ yarn e2e
 ```
 
-This is configured by default to run tests in chrome & firefox browsers.
+This is configured by default to run tests in chrome browsers.
 
 ```
 $ yarn e2e:all
 ```
 
 To run tests in chrome, Edge, IE & firefox browsers.
-
-```
-$ yarn e2e:mac
-```
-
-To run tests in chrome, firefox & safari browsers.
-
-To run specific test files in specific browsers:
 
 ```
 $ yarn testcafe chrome tests/filename
