@@ -4,16 +4,16 @@ import * as config from '../config.json';
 // Resolve the test environment from node environment variable
 function getCurrConfig() {
   const nodeEnv = process.env.TEST_ENV;
-  let getConfig;
+  let getEnvConfig;
   if (nodeEnv === 'dev') {
-    getConfig = config.dev;
+    getEnvConfig = config.dev;
   } else if (nodeEnv === 'prod') {
-    getConfig = config.prod;
+    getEnvConfig = config.prod;
   } else {
-    getConfig = config.dev;
+    getEnvConfig = config.dev;
   }
-  console.log(`Test will be run against ${getConfig.baseUrl}`);
-  return getConfig;
+  console.log(`Test will be run against ${getEnvConfig.baseUrl}`);
+  return getEnvConfig;
 }
 
 export const envConfigs = getCurrConfig();
