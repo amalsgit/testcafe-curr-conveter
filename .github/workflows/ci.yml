@@ -1,4 +1,4 @@
-name: Basic TestCafe Workflow
+name: Build
 on: [push]
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
         with:
           name: reports
           path: reports
-          
+
   sonarcloud:
     name: Run Sonar Scan
     runs-on: ubuntu-latest
