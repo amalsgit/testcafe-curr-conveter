@@ -17,7 +17,7 @@ jobs:
       - name: Run visual tests
         env:
             PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: yarn visual-tests
+        run: yarn visual-test
       - name: Generate Reports
         run: yarn reports
       - name: Archive test artifacts
