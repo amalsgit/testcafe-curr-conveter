@@ -9,11 +9,15 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 13.x     
+          node-version: 13.x    
       - name: Install dependencies
         run: yarn
       - name: Run tests
         run: yarn e2e
+      - name: Run visual tests
+        env:
+            PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: yarn visual-tests
       - name: Generate Reports
         run: yarn reports
       - name: Archive test artifacts

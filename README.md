@@ -1,4 +1,5 @@
-![Basic TestCafe Workflow](https://github.com/amalsgit/testcafe-curr-conveter/workflows/Basic%20TestCafe%20Workflow/badge.svg)
+![Build & Tests](https://github.com/amalsgit/testcafe-curr-conveter/workflows/Basic%20TestCafe%20Workflow/badge.svg)
+[![Percy.io for visual tests](https://percy.io/static/images/percy-badge.svg)](https://percy.io/amal/testcafe-curr-converter)
 # TestCafe Sample Base Project
 
 Run the TestCafe end-to-end ui tests by:

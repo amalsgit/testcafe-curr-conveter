@@ -31,7 +31,7 @@ const toCurrencyOptions = toCurrency.find('option');
 const conversionMsg = Selector('.conversion-response');
 
 test('Should be able to convert currency', async t => {
-  await t.maximizeWindow;
+  await t.maximizeWindow();
 
   await t
     .typeText('#base_amount', '100')
@@ -50,7 +50,7 @@ test('Should be able to convert currency', async t => {
 test.requestHooks(conversionMock)(
   'Should be able to convert currency with mock backend',
   async t => {
-    await t.maximizeWindow;
+    await t.maximizeWindow();
 
     await t
       .typeText('#base_amount', '100')
