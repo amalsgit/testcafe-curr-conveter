@@ -1,6 +1,7 @@
 ![Build & Tests](https://github.com/amalsgit/testcafe-curr-conveter/workflows/Basic%20TestCafe%20Workflow/badge.svg)
 [![Percy.io for visual tests](https://percy.io/static/images/percy-badge.svg)](https://percy.io/amal/testcafe-curr-converter)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bhuism_badge&metric=alert_status)](https://sonarcloud.io/dashboard?id=amalsgit_testcafe-curr-conveter)
+[![Known Vulnerabilities](https://snyk.io/test/github/amalsgit/testcafe-curr-conveter/badge.svg)](https://snyk.io/test/github/amalsgit/testcafe-curr-conveter)
 # TestCafe Sample Base Project
 
 This is a sample automation project to demonstrate few features in TestCafe for UI automation. Tests are run against a sample web application with a functionality of currency conversion.
