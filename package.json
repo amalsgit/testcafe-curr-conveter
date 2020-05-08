@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "@percy/agent": "^0.26.2",
     "@percy/testcafe": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",

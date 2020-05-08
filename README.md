@@ -1,7 +1,49 @@
 ![Build & Tests](https://github.com/amalsgit/testcafe-curr-conveter/workflows/Basic%20TestCafe%20Workflow/badge.svg)
 [![Percy.io for visual tests](https://percy.io/static/images/percy-badge.svg)](https://percy.io/amal/testcafe-curr-converter)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bhuism_badge&metric=alert_status)](https://sonarcloud.io/dashboard?id=amalsgit_testcafe-curr-conveter)
+[![Known Vulnerabilities](https://snyk.io/test/github/amalsgit/testcafe-curr-conveter/badge.svg)](https://snyk.io/test/github/amalsgit/testcafe-curr-conveter)
 # TestCafe Sample Base Project
+
+This is a sample automation project to demonstrate few features in TestCafe for UI automation. Tests are run against a sample web application with a functionality of currency conversion.
+
+Visual Testing using Percy is also included to one of the tests.
+
+CI is implemented using Github Actions and SonarCloud is used for static code analysis.
+
+Snyk library vulnerability scans are also included as part of the CI.
+
+Percy visual checks, SonarCloud checks & Snyk scans can be seen in any of the open or closed pull requests.
+
+## Test Summary
+
+`experiment.tests.ts` : Tests without any page objects or best practices. Just a dirtly way of putting all stuff on a single page to check how things works.
+
+`currCoversion.tests.ts` : Tests with all the best practices in place. Tests might fail since the backgroud API is not mocked. This means that the assertion might fail due to change in currency exchange rate as per the market.
+
+`mockedCurrConversion.tests.ts` : Tests with best practices and backed API's mocked.
+
+`currConversionVisual.tests.ts` : Tests incorporating visual tests using Percy
+
+`logger.tests.ts` : Tests to check the API logging functionality
+
+`api.tests.ts` : Tests to check the ability to perform Axios API calls with TestCafe
+
+`hooks.tests.ts` : Tests to check the before and after hooks of TestCafe
+
+## Setup
+
+Make sure node is installed on your alone.
+
+Install Yarn and Typescript.
+
+## Run Commands
+
+
+To install all the dependencies
+
+```
+$ yarn
+```
 
 Run the TestCafe end-to-end ui tests by:
 
@@ -18,7 +60,7 @@ $ yarn e2e:all
 To run tests in chrome, Edge, IE & firefox browsers.
 
 ```
-$ yarn testcafe chrome tests/filename
+$ yarn testcafe chrome tests/filename --ts-config-path=tsconfig.json
 ```
 
 TestCafe supports chrome,firefox,safari,edge and ie browsers. The only pre-requisite is that the browser should be installed in your machine.

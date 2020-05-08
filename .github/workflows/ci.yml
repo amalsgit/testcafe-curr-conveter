@@ -19,8 +19,10 @@ jobs:
             PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: yarn visual-test
       - name: Generate Reports
+        if: always()
         run: yarn reports
       - name: Archive test artifacts
+        if: always()
         uses: actions/upload-artifact@v1
         with:
           name: reports
