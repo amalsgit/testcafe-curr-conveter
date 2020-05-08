@@ -1,6 +1,6 @@
 ![Build & Tests](https://github.com/amalsgit/testcafe-curr-conveter/workflows/Basic%20TestCafe%20Workflow/badge.svg)
 [![Percy.io for visual tests](https://percy.io/static/images/percy-badge.svg)](https://percy.io/amal/testcafe-curr-converter)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bhuism_badge&metric=alert_status)](https://sonarcloud.io/dashboard?id=bhuism_badge)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bhuism_badge&metric=alert_status)](https://sonarcloud.io/dashboard?id=amalsgit_testcafe-curr-conveter)
 # TestCafe Sample Base Project
 
 Run the TestCafe end-to-end ui tests by:
