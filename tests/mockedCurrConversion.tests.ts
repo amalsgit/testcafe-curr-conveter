@@ -16,6 +16,6 @@ test.requestHooks(coversionMock)(
     // When
     await homePage.convertCurrency();
     // Then
-    await homePage.verifyConversion('100 Euro is about 11910.35 Japanese Yen');
+    await homePage.verifyConversion('100 Euro is about 11910.351 Japanese Yen');
   },
 );
