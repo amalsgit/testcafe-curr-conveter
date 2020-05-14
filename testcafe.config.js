@@ -5,6 +5,7 @@ const browserArg = process.argv[2];
 
 const browsers = [
   ...[browserArg === 'chrome' ? ['chrome'] : []],
+  ...[browserArg === 'firefox' ? ['firefox'] : []],
   ...[browserArg === 'all' ? ['chrome', 'firefox', 'edge', 'ie'] : []],
 ];
 
