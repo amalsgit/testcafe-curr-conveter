@@ -12,7 +12,7 @@ jobs:
           node-version: 13.x    
 
       - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        id: yarn-cache
         with:
           path: node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -22,10 +22,11 @@ jobs:
 
       - name: Run tests
         run: yarn e2e
-      # - name: Run visual tests
-      #   env:
-      #       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-      #   run: yarn visual-test
+
+      - name: Run visual tests
+        env:
+            PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: yarn visual-test
 
       - name: Generate Reports
         if: always()
