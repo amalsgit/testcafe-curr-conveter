@@ -2,6 +2,7 @@
 import { RequestLogger } from 'testcafe';
 import * as homePage from '../page_models/home_page';
 import * as config from '../utils/loadConfigs';
+import { coversionMock } from '../mocks/api_mocks';
 
 fixture('Log all network calls').page(config.envConfigs.baseUrl);
 
@@ -12,7 +13,7 @@ const logger = RequestLogger(/cash-conversion.dev-tester.com/, {
   logResponseHeaders: true,
 });
 
-test.requestHooks(logger)(
+test.requestHooks(logger, coversionMock)(
   'Log all network calls during currency conversion',
   async () => {
     // Given

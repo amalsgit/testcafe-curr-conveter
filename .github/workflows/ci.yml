@@ -4,20 +4,30 @@ on: [push]
 jobs:
   build:
     name: Run TestCafe Tests
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 13.x    
+
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
       - name: Install dependencies
-        run: yarn
+        run: yarn --frozen-lockfile
+
       - name: Run tests
         run: yarn e2e
+
       - name: Run visual tests
         env:
             PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: yarn visual-test
+
       - name: Generate Reports
         if: always()
         run: yarn reports

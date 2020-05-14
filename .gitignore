@@ -3,3 +3,5 @@ node_modules
 screenshots
 reports
 testcafe-reporter-cucumber-json.json
+.scannerwork
+sonar*

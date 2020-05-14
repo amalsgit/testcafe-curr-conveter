@@ -4,7 +4,8 @@ const createTestCafe = require('testcafe');
 const browserArg = process.argv[2];
 
 const browsers = [
-  ...[browserArg === 'chrome' ? ['chrome'] : []],
+  ...[browserArg === 'chrome' ? ['chrome:headless'] : []],
+  ...[browserArg === 'firefox' ? ['firefox'] : []],
   ...[browserArg === 'all' ? ['chrome', 'firefox', 'edge', 'ie'] : []],
 ];
 

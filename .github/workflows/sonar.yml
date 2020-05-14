@@ -8,9 +8,15 @@ jobs:
     name: Run Sonar Scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
       - name: Install dependencies
-        run: yarn
+        run: yarn --frozen-lockfile
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.1
         env:
