@@ -33,6 +33,6 @@
     "reports": "node report-generator.js",
     "e2e": "node testcafe.config.js chrome --reporter-app-name='ConverterApp' --reporter-app-version='1.0.0'",
     "e2e:all": "node testcafe.config.js all --reporter-app-name='ConverterApp' --reporter-app-version='1.0.0'",
-    "visual-test": "percy exec -- testcafe chrome tests/currConversionVisual.tests.ts --ts-config-path=tsconfig.json"
+    "visual-test": "percy exec -- testcafe chrome:headless tests/currConversionVisual.tests.ts --ts-config-path=tsconfig.json"
   }
 }
