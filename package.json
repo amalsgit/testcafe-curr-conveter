@@ -2,7 +2,7 @@
   "dependencies": {
     "testcafe": "^1.8.4",
     "typescript": "^3.8.3",
-    "snyk": "^1.319.2"
+    "snyk": "^1.425.4"
   },
   "devDependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
