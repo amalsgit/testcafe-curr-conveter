@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "testcafe": "^1.8.4",
+    "testcafe": "^13.1.1",
     "typescript": "^3.8.3",
-    "snyk": "^1.319.2"
+    "snyk": "^1.685.0"
   },
   "devDependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
@@ -25,7 +25,7 @@
     "eslint-plugin-testcafe": "^0.2.1",
     "multiple-cucumber-html-reporter": "^1.16.1",
     "prettier": "^2.0.5",
-    "testcafe": "^1.8.4",
+    "testcafe": "^13.1.1",
     "testcafe-reporter-cucumber-json": "^5.0.0",
     "testcafe-reporter-html": "^1.4.6"
   },
